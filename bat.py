@@ -6,14 +6,30 @@ FINDMY_FILES = '~/Library/Caches/com.apple.findmy.fmipcore/Items.data'
 
 keys = 'batteryStatus'
 
-airtags = {}
+airtags = {"AirTag" : [], "BatteryStatus" : [], "BatteryLevel" : []}
 
 f = open(os.path.expanduser(FINDMY_FILES), 'r')
 json_data = json.loads(f.read())
 for item in json_data:
-    airtags[item["name"]] = item["batteryStatus"]
+    airtags["AirTag"].append(item["name"])
+    airtags["BatteryStatus"].append(item["batteryStatus"])
 
 
-headers = ["AirTag", "Battery Status"]
+i=0
+for tag in airtags["AirTag"]:
+    bat_stat = airtags["BatteryStatus"][i]
+    i+=1
+    if bat_stat == 1:
+        airtags["BatteryLevel"].append('#####')
+    if bat_stat  == 2:
+        airtags["BatteryLevel"].append('####')
+    if bat_stat == 3:
+        airtags["BatteryLevel"].append('###')
+    if bat_stat == 4:
+        airtags["BatteryLevel"].append('##')
+    if bat_stat == 5:
+        airtags["BatteryLevel"].append('#')
 
-print(tabulate([k for k in airtags.items()], headers = headers, tablefmt='orgtbl'))
+
+headers = ["AirTag", "Battery Status", "Battery Level"]
+print(tabulate(airtags, headers = headers, tablefmt='outline'))
