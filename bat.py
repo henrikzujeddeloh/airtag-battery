@@ -1,5 +1,6 @@
 import json
 import os
+from tabulate import tabulate
 
 FINDMY_FILES = '~/Library/Caches/com.apple.findmy.fmipcore/Items.data'
 
@@ -12,6 +13,7 @@ json_data = json.loads(f.read())
 for item in json_data:
     airtags[item["name"]] = item["batteryStatus"]
 
-for tag in airtags:
-    print("Battery Status of " + tag + " is " + str(airtags[tag]))
 
+headers = ["AirTag", "Battery Status"]
+
+print(tabulate([k for k in airtags.items()], headers = headers, tablefmt='orgtbl'))
