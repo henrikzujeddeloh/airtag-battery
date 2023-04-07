@@ -9,3 +9,6 @@ Make sure the terminal has full disk access:
 System Settings > Privacy & Security > Full Disk Acess > allow for Terminal (or iTerm)
 
 Run `python bat.py`
+
+
+![image](docs/output.png)
