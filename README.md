@@ -16,9 +16,11 @@ The FindMy app may need to be opened to receive the battery status of the AirTag
 
 2. Run `python3 airtag-bat.py`
 
-### Executable
+### pip
 
-A compiled executable is also located under `dist`.
-Simply run `./airtag-bat` from this directory or link/move the executable to `/usr/local/bin`.
+1. Install with `pip3 install airtag-bat`
 
+2. Run anywhere with `airtag-bat`
+
+## Sample Output
 ![image](docs/output.png)

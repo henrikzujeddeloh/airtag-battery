@@ -7,6 +7,11 @@ def get_bat():
     # Location of FindMy cache file for AirTags
     FINDMY_FILES = '~/Library/Caches/com.apple.findmy.fmipcore/Items.data'
 
+    # checks if FindMy cache file exists
+    if os.path.exists(os.path.expanduser(FINDMY_FILES)) == False:
+        print("Please open FindMy to generate cache file")
+        return
+
     # dict with AirTag names, and battery status
     airtags = {"AirTag" : [], "BatteryStatus" : [], "BatteryLevel" : []}
 
