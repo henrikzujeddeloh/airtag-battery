@@ -3,9 +3,10 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "airtag_bat"
+name = "airtag-bat"
 version = "1.0.1"
 description = "A tool to read AirTag battery status"
+readme = "README.md"
 authors = [
     { name = "Henrik zu Jeddeloh", email = "henrik.zujeddeloh@protonmail.com"},
 ]

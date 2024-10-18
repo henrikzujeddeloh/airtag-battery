@@ -1,7 +1,11 @@
 # AirTagBattery
 
-Apple removed the battery status of AirTags from the FindMy app. This script reads the battery status from the FindMy cache for all AirTags and displays battery level.
+THIS SCRIPT DOES NOT WORK FOR macOS 14.4 AND LATER!
+Reason: FindMy cache file became encrypted.
 
+Apple removed the battery status of AirTags from the FindMy app. This script reads the battery status from the FindMy cache for all AirTags and displays their respective battery level.
+
+**Only works for macOS!** 
 
 ## Usage
 
@@ -23,4 +27,5 @@ The FindMy app may need to be opened to receive the battery status of the AirTag
 2. Run anywhere with `airtag-bat`
 
 ## Sample Output
+
 ![image](docs/output.png)
